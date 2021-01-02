@@ -7,26 +7,31 @@
 
 import SwiftUI
 
-struct ActivityItem: Identifiable, Codable {
+struct Activity: Identifiable, Codable {
     let id = UUID()
     let name: String
     let description: String
+    let timesCompleted: Int
 }
 
 class Activities: ObservableObject {
-    @Published var items: [ActivityItem] {
+    @Published var items: [Activity] {
         didSet {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(items) {
-                UserDefaults.standard.set(encoded, forKey: "Items")
-            }
+            saveActivities()
+        }
+    }
+    
+    func saveActivities() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(items) {
+            UserDefaults.standard.set(encoded, forKey: "Items")
         }
     }
 
     init() {
         if let items = UserDefaults.standard.data(forKey: "Items") {
             let decoder = JSONDecoder()
-            if let decoded = try? decoder.decode([ActivityItem].self, from: items) {
+            if let decoded = try? decoder.decode([Activity].self, from: items) {
                 self.items = decoded
                 return
             }
@@ -44,12 +49,14 @@ struct ContentView: View {
             List {
                 ForEach(activities.items) { item in
                     
-                    VStack(alignment: .leading) {
-                        Text(item.name)
-                            .font(.headline)
-                        Text(item.description)
+                    NavigationLink(destination: DetailView(activities: self.activities, activity: item)) {
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                                .font(.headline)
+                            Text(item.description)
+                            Text("Times completed: \(item.timesCompleted)")
+                        }
                     }
-                 
                     
                 }
                 .onDelete(perform: removeItems)

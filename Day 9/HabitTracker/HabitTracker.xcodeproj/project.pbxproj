@@ -12,6 +12,7 @@
 		5D34A3B8259FD90100EEF79F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D34A3B7259FD90100EEF79F /* Assets.xcassets */; };
 		5D34A3BB259FD90100EEF79F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D34A3BA259FD90100EEF79F /* Preview Assets.xcassets */; };
 		5D34A3C4259FD9DA00EEF79F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A3C3259FD9DA00EEF79F /* AddView.swift */; };
+		5D34A3C725A01B0B00EEF79F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A3C625A01B0B00EEF79F /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5D34A3BA259FD90100EEF79F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D34A3BC259FD90100EEF79F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D34A3C3259FD9DA00EEF79F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		5D34A3C625A01B0B00EEF79F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		5D34A3B2259FD8FC00EEF79F /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				5D34A3C625A01B0B00EEF79F /* DetailView.swift */,
 				5D34A3B3259FD8FC00EEF79F /* HabitTrackerApp.swift */,
 				5D34A3B5259FD8FC00EEF79F /* ContentView.swift */,
 				5D34A3C3259FD9DA00EEF79F /* AddView.swift */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D34A3B6259FD8FC00EEF79F /* ContentView.swift in Sources */,
+				5D34A3C725A01B0B00EEF79F /* DetailView.swift in Sources */,
 				5D34A3B4259FD8FC00EEF79F /* HabitTrackerApp.swift in Sources */,
 				5D34A3C4259FD9DA00EEF79F /* AddView.swift in Sources */,
 			);
