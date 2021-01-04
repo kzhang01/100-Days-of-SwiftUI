@@ -35,6 +35,8 @@ struct DetailView: View {
                 Text(self.book.author ?? "Unknown author")
                     .font(.title)
                     .foregroundColor(.secondary)
+                
+                Text(self.formatDate)
 
                 Text(self.book.review ?? "No review")
                     .padding()
@@ -62,6 +64,14 @@ struct DetailView: View {
     func deleteBook() {
         moc.delete(book)
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    var formatDate: String {
+        guard let date = self.book.date else { return "Unknown Date" }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return "Reviewed on \(formatter.string(from: date))"
     }
 }
 
