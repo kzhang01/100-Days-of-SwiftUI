@@ -16,6 +16,7 @@
 		5D34A4E425A56B6C00EEF79F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A4E325A56B6C00EEF79F /* Result.swift */; };
 		5D34A4E725A56BA700EEF79F /* MKPointAnnotation-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A4E625A56BA700EEF79F /* MKPointAnnotation-Codable.swift */; };
 		5D34A4EA25A56BCD00EEF79F /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A4E925A56BCD00EEF79F /* MKPointAnnotation-ObservableObject.swift */; };
+		5D34A4ED25A6400A00EEF79F /* UnlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A4EC25A6400A00EEF79F /* UnlockedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5D34A4E325A56B6C00EEF79F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5D34A4E625A56BA700EEF79F /* MKPointAnnotation-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-Codable.swift"; sourceTree = "<group>"; };
 		5D34A4E925A56BCD00EEF79F /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
+		5D34A4EC25A6400A00EEF79F /* UnlockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				5D34A4E925A56BCD00EEF79F /* MKPointAnnotation-ObservableObject.swift */,
 				5D34A4CC25A5660000EEF79F /* BucketListApp.swift */,
 				5D34A4CE25A5660000EEF79F /* ContentView.swift */,
+				5D34A4EC25A6400A00EEF79F /* UnlockedView.swift */,
 				5D34A4DC25A5664900EEF79F /* MapView.swift */,
 				5D34A4D025A5660500EEF79F /* Assets.xcassets */,
 				5D34A4D525A5660500EEF79F /* Info.plist */,
@@ -158,6 +161,7 @@
 				5D34A4EA25A56BCD00EEF79F /* MKPointAnnotation-ObservableObject.swift in Sources */,
 				5D34A4E425A56B6C00EEF79F /* Result.swift in Sources */,
 				5D34A4DD25A5664900EEF79F /* MapView.swift in Sources */,
+				5D34A4ED25A6400A00EEF79F /* UnlockedView.swift in Sources */,
 				5D34A4E025A56B3E00EEF79F /* EditView.swift in Sources */,
 				5D34A4CD25A5660000EEF79F /* BucketListApp.swift in Sources */,
 			);
