@@ -11,6 +11,7 @@ class Prospect: Identifiable, Codable {
     let id = UUID()
     var name = "Anonymous"
     var emailAddress = ""
+    var date = Date()
     fileprivate(set) var isContacted = false
 }
 
@@ -19,20 +20,39 @@ class Prospects: ObservableObject {
     static let saveKey = "SavedData"
 
     init() {
-        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
+        self.people = []
+        if let data = loadFile() {
             if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
                 self.people = decoded
                 return
             }
         }
-
-        self.people = []
     }
 
     private func save() {
         if let encoded = try? JSONEncoder().encode(people) {
-            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+            let url = getDocumentDirectory().appendingPathComponent(Self.saveKey)
+
+            do {
+                try encoded.write(to: url, options: [.atomicWrite, .completeFileProtection])
+            }
+            catch let error {
+                print("Could not write data: " + error.localizedDescription)
+            }
         }
+    }
+
+    private func loadFile() -> Data? {
+        let url = getDocumentDirectory().appendingPathComponent(Self.saveKey)
+        if let data = try? Data(contentsOf: url) {
+            return data
+        }
+        return nil
+    }
+
+    private func getDocumentDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 
     func add(_ prospect: Prospect) {

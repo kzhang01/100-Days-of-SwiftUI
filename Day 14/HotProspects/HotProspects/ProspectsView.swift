@@ -13,9 +13,16 @@ struct ProspectsView: View {
     enum FilterType {
         case none, contacted, uncontacted
     }
+    enum SortType {
+        case name, recent
+    }
 
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    
+    @State private var isShowingSortOptions = false
+    @State var sort: SortType = .name
+    
     let filter: FilterType
 
     var title: String {
@@ -39,17 +46,32 @@ struct ProspectsView: View {
                 return prospects.people.filter { !$0.isContacted }
         }
     }
+    
+    var sortedProspects: [Prospect] {
+        switch sort {
+            case .name:
+                return filteredProspects.sorted { $0.name < $1.name }
+            case .recent:
+                return filteredProspects.sorted { $0.date > $1.date }
+        }
+    }
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                ForEach(sortedProspects) { prospect in
+                    HStack {
+                        if self.filter == .none {
+                            Image(systemName: prospect.isContacted ? "envelope" : "envelope.badge")
+                        }
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
+                        }
                     }
+                    
                     .contextMenu {
                         Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted" ) {
                             self.prospects.toggle(prospect)
@@ -64,14 +86,25 @@ struct ProspectsView: View {
                 }
             }
             .navigationBarTitle(title)
-            .navigationBarItems(trailing: Button(action: {
-                self.isShowingScanner = true
-            }) {
-                Image(systemName: "qrcode.viewfinder")
-                Text("Scan")
-            })
+            .navigationBarItems(leading: Button("Sort") {
+                    self.isShowingSortOptions = true
+                }, trailing: Button(action: {
+                    self.isShowingScanner = true
+                }) {
+                    Image(systemName: "qrcode.viewfinder")
+                    Text("Scan")
+                }
+            )
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+            }
+            .actionSheet(isPresented: $isShowingSortOptions) {
+                ActionSheet(title: Text("Sort by:"), buttons: [
+                    .default(Text("Name \((self.sort == .name ? "✓ " : ""))"), action: { self.sort = .name }),
+                    .default(Text("Date added \(self.sort == .recent ? "✓ " : "") "), action: { self.sort = .recent }),
+                    .cancel()
+                ])
+                
             }
         }
     }
