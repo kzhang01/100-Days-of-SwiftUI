@@ -10,13 +10,23 @@ import SwiftUI
 struct ResultsView: View {
     @EnvironmentObject var dices: Dices
     
+    func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return "\(formatter.string(from: date))"
+    }
     var body: some View {
-        NavigationView{
-            List{
+        NavigationView {
+            List {
                 ForEach(dices.dices.reversed()){ index in
-                    VStack{
-                        Text("\(index.number)")
-                            .padding()
+                    HStack {
+                        Text("🎲 \(index.number)")
+                            .font(.headline)
+                        Spacer()
+                        Text(formatDate(date: index.date))
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
                     }
                 }
             }

@@ -17,7 +17,7 @@ struct DiceView: View {
     @State var random = 1
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
+            VStack {
                 Text("Choose what sided dice you want to roll:")
                 HStack(spacing: 20) {
                     Spacer()
@@ -44,27 +44,33 @@ struct DiceView: View {
                     }
                     Spacer()
                 }
+                Spacer()
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 25.0)
-                        .fill(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                        .fill(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
                         .frame(width: 200, height: 200)
-                        .padding()
+                        
+                        .padding(5)
+                        .background(Color.black)
+                        .clipShape(RoundedRectangle(cornerRadius: 27.5))
                     
                     Text("\(random)")
                         .font(.title)
                         .padding()
                 }
                 
+                Spacer()
                 VStack {
                     Button("Roll \(numSides)-sided dice"){
                         random = Int.random(in: 1 ... numSides)
                         
                         let newDice = Dice()
                         newDice.number = random
+                        newDice.date = Date()
                         self.dices.add(newDice)
                     }
-                    .font(.largeTitle)
+                    .font(.title)
                     .foregroundColor(.white)
                     .padding()
                     .background(Color.black)

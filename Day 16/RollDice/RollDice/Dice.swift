@@ -10,6 +10,7 @@ import SwiftUI
 class Dice: Identifiable, Codable{
     var id = UUID()
     var number = 0
+    var date = Date()
 }
 
 class Dices: ObservableObject{
