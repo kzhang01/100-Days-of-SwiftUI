@@ -13,6 +13,9 @@
 		5D34A5E825A8EE4900EEF79F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D34A5E725A8EE4900EEF79F /* Preview Assets.xcassets */; };
 		5D34A5EA25A8EE4900EEF79F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A5E925A8EE4900EEF79F /* Persistence.swift */; };
 		5D34A5ED25A8EE4900EEF79F /* RollDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A5EB25A8EE4900EEF79F /* RollDice.xcdatamodeld */; };
+		5D34A5F825A9096600EEF79F /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A5F725A9096600EEF79F /* DiceView.swift */; };
+		5D34A5FB25A9096C00EEF79F /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A5FA25A9096C00EEF79F /* ResultsView.swift */; };
+		5D34A5FE25A90CFC00EEF79F /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D34A5FD25A90CFC00EEF79F /* Dice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		5D34A5E925A8EE4900EEF79F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5D34A5EC25A8EE4900EEF79F /* RollDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RollDice.xcdatamodel; sourceTree = "<group>"; };
 		5D34A5EE25A8EE4900EEF79F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D34A5F725A9096600EEF79F /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		5D34A5FA25A9096C00EEF79F /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		5D34A5FD25A90CFC00EEF79F /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			children = (
 				5D34A5E025A8EE4500EEF79F /* RollDiceApp.swift */,
 				5D34A5E225A8EE4500EEF79F /* ContentView.swift */,
+				5D34A5F725A9096600EEF79F /* DiceView.swift */,
+				5D34A5FA25A9096C00EEF79F /* ResultsView.swift */,
+				5D34A5FD25A90CFC00EEF79F /* Dice.swift */,
 				5D34A5E425A8EE4900EEF79F /* Assets.xcassets */,
 				5D34A5E925A8EE4900EEF79F /* Persistence.swift */,
 				5D34A5EE25A8EE4900EEF79F /* Info.plist */,
@@ -145,6 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D34A5EA25A8EE4900EEF79F /* Persistence.swift in Sources */,
+				5D34A5FE25A90CFC00EEF79F /* Dice.swift in Sources */,
+				5D34A5FB25A9096C00EEF79F /* ResultsView.swift in Sources */,
+				5D34A5F825A9096600EEF79F /* DiceView.swift in Sources */,
 				5D34A5E325A8EE4500EEF79F /* ContentView.swift in Sources */,
 				5D34A5E125A8EE4500EEF79F /* RollDiceApp.swift in Sources */,
 				5D34A5ED25A8EE4900EEF79F /* RollDice.xcdatamodeld in Sources */,
