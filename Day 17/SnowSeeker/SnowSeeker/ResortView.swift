@@ -17,10 +17,17 @@ struct ResortView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Image(decorative: resort.id)
-                    .resizable()
-                    .scaledToFit()
-
+                ZStack (alignment: .bottomTrailing){
+                    Image(decorative: resort.id)
+                        .resizable()
+                        .scaledToFit()
+                    Text("Photo by \(resort.imageCredit)")
+                        .font(.caption)
+                        .foregroundColor(.white)
+                        .padding(4)
+                        .background(Color.gray)
+                }
+                
                 Group {
                     HStack {
                         if sizeClass == .compact {
