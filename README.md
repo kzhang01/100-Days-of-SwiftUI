@@ -1,8 +1,10 @@
-# 100 Days of SwiftUI
+# HKP Training
 
 This is my repository for Paul Hudson's [100 days of SwiftUI](https://www.hackingwithswift.com/100/swiftui) projects and challenges.
 
 It was completed as part of my training for an internship with HKP Solutions, a mobile app development company focused on developing scalable solutions for hotel chains to increase labor efficiency, improve employee satisfaction, and enhance the customer experience.
+
+*Note: The days in this repository will not match up with that of 100 Days of SwiftUI. It instead follows the schedule of the internship's training period.*
 
 ## Lists of projects:
 
